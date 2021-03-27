@@ -1,11 +1,12 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-var lowerCaseLetters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
-var upperCaseLetters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
-var specialChar = ["=","!","-","@",")","#","(","$","*","%","&","^","+",]
-var numbers = ["1","2","3","4","5","6","7","8","9"]
-var userinput; 
+var lowerCaseLetters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+var upperCaseLetters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+var specialChar = ["=","!","-","@",")","#","(","$","*","%","&","^","+",];
+var numbers = ["1","2","3","4","5","6","7","8","9"];
+var userinput;
+var arrays =[];
 
 
 function generatePassword(){
@@ -31,11 +32,11 @@ if(!chooseupper&&chooselower&&!choosenumbers&&!choosespecial){
   return generatePassword()
 }
 
-if(chooseupper){
-  chosenCharacters += upper
+if(chooseupper)   {
+  chosenCharacters += upperCaseLetters
 }
-if(chooselower){
-  chosenCharacters += lower
+if(chooselower)   {
+  chosenCharacters += lowerCaseLetters
 }
 
 if(choosenumbers) {
@@ -43,7 +44,7 @@ if(choosenumbers) {
 }
 
 if(choosespecial) {
-  chosenCharacters += special
+  chosenCharacters += specialChar
 }
 
 for (var i = 0; i < length; i++) {
@@ -55,18 +56,17 @@ return result;
 
 
 // Write password to the #password input
-function writepassword() {
-  var password = generatePassword();
+function enterpassword() {
+  var password = genratepassword;
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
 }
 
-debugger;
-function writePassword() {
+debugger; 
+function writePassword(){
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
-
 }
 
 // Add event listener to generate button
